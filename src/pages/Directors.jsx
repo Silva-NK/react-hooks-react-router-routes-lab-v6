@@ -6,9 +6,11 @@ function Directors() {
   const [directors, setDirectors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/directors")
-      .then((result) => result.json())
-      .then((data) => setDirectors(data));
+    if (typeof window !== "undefined") {
+      fetch("http://localhost:4000/directors")
+        .then((result) => result.json())
+        .then((data) => setDirectors(data));
+    }
   }, []);
 
   return (

@@ -8,9 +8,11 @@ function Movie() {
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/movies/${id}`)
-      .then((resp) => resp.json())
-      .then((data) => setMovie(data));
+    if (typeof window !== "undefined") {
+      fetch(`http://localhost:4000/movies/${id}`)
+        .then((resp) => resp.json())
+        .then((data) => setMovie(data));
+    }
   }, [id]);
 
   if (!movie) return <p>Loading...</p>;

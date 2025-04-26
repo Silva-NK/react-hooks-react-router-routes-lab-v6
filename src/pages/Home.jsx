@@ -8,9 +8,11 @@ function Home() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/movies")
-      .then((response) => response.json())
-      .then((data) => setMovies(data));
+    if (typeof window !== "undefined") {
+      fetch("http://localhost:4000/movies")
+        .then((response) => response.json())
+        .then((data) => setMovies(data));
+    }
   }, []);
 
 

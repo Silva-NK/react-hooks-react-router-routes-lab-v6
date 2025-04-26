@@ -6,9 +6,11 @@ function Actors() {
   const [actors, setActors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/actors")
+    if (typeof window !== "undefined") {
+      fetch("http://localhost:4000/actors")
       .then((res) => res.json())
       .then((data) => setActors(data));
+    }
   }, []);
 
   return (
