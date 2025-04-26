@@ -10,3 +10,26 @@ article {
     box-sizing: border-box;
     padding: 5px;
 }
+
+article a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+}
+  
+article a:hover {
+    text-decoration: underline;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin: 20px 0;
+  }
